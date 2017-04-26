@@ -8,9 +8,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.batch.item.database.JdbcPagingItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import rewards.batch.config.SystemTestSelector;
 
@@ -18,8 +20,10 @@ import rewards.batch.config.SystemTestSelector;
  * Simple integration test that checks if the unconfirmedDiningsReader
  * has been correctly configured as a Spring bean to help with the lab. 
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes=SystemTestSelector.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes=SystemTestSelector.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=SystemTestSelector.class)
 public class UnconfirmedDiningsReaderTests {
 	@Autowired JdbcPagingItemReader<Dining> diningsReader;
 	

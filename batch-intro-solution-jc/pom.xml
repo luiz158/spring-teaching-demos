@@ -4,23 +4,67 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.springsource.training.eiws</groupId>
 	<artifactId>batch-intro-solution</artifactId>
 	<packaging>jar</packaging>
+        <version>1.0.0-SNAPSHOT</version>
 
+<!--
 	<parent>
 		<groupId>com.springsource.training.eiws</groupId>
 		<artifactId>parentEiwsProject</artifactId>
-		<version>4.2.a.RELEASE</version>
+		<version>4.2.1.RELEASE</version>
 	</parent>
+-->
+
+<!--version>Athens-SR4</version-->
+<!--
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>io.spring.platform</groupId>
+            <artifactId>platform-bom</artifactId>
+            <version>Brussels-SR1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+-->
+<!--version>Athens-SR4</version-->
+<!--version>Brussels-SR1</version-->
+    <parent>
+        <groupId>io.spring.platform</groupId>
+        <artifactId>platform-bom</artifactId>
+        <version>Brussels-SR1</version>
+        <!--version>Athens-SR4</version-->
+        <relativePath/>
+    </parent>
+
+   <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
 	<dependencies>
 	
+<dependency>
+    <groupId>org.hsqldb</groupId>
+    <artifactId>hsqldb</artifactId>
+    <!--version>2.4.0</version-->
+</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-batch</artifactId>
 		</dependency>
 	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
 			<artifactId>spring-batch-test</artifactId>
@@ -48,4 +92,16 @@
 		</dependency>
 		
 	</dependencies>
+
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+
 </project>
+

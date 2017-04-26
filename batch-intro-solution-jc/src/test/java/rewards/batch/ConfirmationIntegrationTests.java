@@ -11,10 +11,12 @@ import org.junit.runner.RunWith;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.jms.JmsItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+//import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import rewards.batch.config.SystemTestSelector;
@@ -24,8 +26,10 @@ import rewards.batch.config.SystemTestSelector;
  * of the ConfirmationReader and -Updater.  
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes=SystemTestSelector.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@SpringApplicationConfiguration(classes=SystemTestSelector.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=SystemTestSelector.class)
 public class ConfirmationIntegrationTests {
 	
 	static final String CONFIRMED_SQL = "select CONFIRMED from T_DINING where ID = ?";
